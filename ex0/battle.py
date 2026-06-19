@@ -12,7 +12,3 @@ class Creature(ABC):
 
     def describe(self) -> str:
         return f"{self._name} is a {self._type} type Creature"
-
-
-if __name__ == "__main__":
-    print("jourbon")
