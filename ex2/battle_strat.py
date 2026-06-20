@@ -22,7 +22,7 @@ class NormalStrategy(BattleStrategy):
 
     def act(self, crea: Creature) -> None:
         if isinstance(crea, Creature):
-            crea.attack()
+            print(crea.attack())
         else:
             raise Exception(
                 f"Battle error, aborting tournament: Invalid Creature '{crea._name}' for this normal strategy"
@@ -31,18 +31,16 @@ class NormalStrategy(BattleStrategy):
 
 class AggressiveStrategy(BattleStrategy):
     def is_valid(self, crea: Creature) -> bool:
-        if isinstance(crea, Creature) and isinstance(
-            crea, TransformCapability
-        ):
+        if isinstance(crea, Creature) and isinstance(crea, TransformCapability):
             return True
         else:
             return False
 
     def act(self, crea: Creature) -> None:
         if isinstance(crea, TransformCapability):
-            crea.transform()
-            crea.attack()
-            crea.revert()
+            print(crea.transform())
+            print(crea.attack())
+            print(crea.revert())
         else:
             raise Exception(
                 f"Battle error, aborting tournament: Invalid Creature '{crea._name}' for this aggressive strategy"
@@ -58,8 +56,8 @@ class DefensiveStrategy(BattleStrategy):
 
     def act(self, crea: Creature) -> None:
         if isinstance(crea, HealCapability):
-            crea.attack()
-            crea.heal("itself")
+            print(crea.attack())
+            print(crea.heal("itself"))
         else:
             raise Exception(
                 f"Battle error, aborting tournament: Invalid Creature '{crea._name}' for this defensive strategy"
