@@ -1,7 +1,7 @@
 from ex0 import Creature, CreatureFactory, FlameFactory, AquaFactory
 
 
-def verif_factory(factory: CreatureFactory):
+def verif_factory(factory: CreatureFactory) -> None:
     try:
         base: Creature = factory.create_base()
         evolved: Creature = factory.create_evolved()
@@ -13,7 +13,7 @@ def verif_factory(factory: CreatureFactory):
         raise e
 
 
-def battle(flame_factory: FlameFactory, aqua_factory: AquaFactory):
+def battle(flame_factory: FlameFactory, aqua_factory: AquaFactory) -> None:
     try:
         verif_factory(flame_factory)
         verif_factory(aqua_factory)

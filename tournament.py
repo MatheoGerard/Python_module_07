@@ -1,6 +1,5 @@
 from ex0 import FlameFactory, AquaFactory, Creature
 from ex1 import heal_factory, trans_factory
-from ex1.other_factory import Shiftling
 import ex2
 
 if __name__ == "__main__":
@@ -60,7 +59,7 @@ if __name__ == "__main__":
 
     print("\n* Battle *")
     shiftling: Creature = transforming_factory.create_base()
-    aquabub: Creature = aqua_fatcory.create_base()
+    aquabub = aqua_fatcory.create_base()
     aquabub.describe()
     print(" vs.")
     shiftling.describe()
